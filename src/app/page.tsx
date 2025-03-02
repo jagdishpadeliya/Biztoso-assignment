@@ -36,9 +36,11 @@ export default function Home() {
               <p className="font-semibold">{tile.longDescription}</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full bg-blue-600 hover:bg-blue-500 cursor-pointer">
-                <Link href={tile.href}>{tile.buttonTitle}</Link>
-              </Button>
+              <Link href={tile.href}>
+                <Button className="w-full bg-blue-600 hover:bg-blue-500 cursor-pointer">
+                  {tile.buttonTitle}
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         ))}
