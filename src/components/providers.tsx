@@ -2,6 +2,7 @@
 
 import { LeadsProvider } from "@/contexts/lead-context";
 import { ListingProvider } from "@/contexts/listing-context";
+import { MessagingProvider } from "@/contexts/messaging-context";
 import { ProfileProvider } from "@/contexts/profile-context";
 import { useEffect, useState } from "react";
 
@@ -19,7 +20,9 @@ export const Providers = ({
   return (
     <ProfileProvider>
       <ListingProvider>
-        <LeadsProvider>{children}</LeadsProvider>
+        <LeadsProvider>
+          <MessagingProvider>{children}</MessagingProvider>
+        </LeadsProvider>
       </ListingProvider>
     </ProfileProvider>
   );

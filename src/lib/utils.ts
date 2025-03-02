@@ -59,3 +59,11 @@ export function formatDate(date: Date | string): string {
     day: "numeric",
   });
 }
+
+export function formatTime(date: Date | string): string {
+  const d = new Date(date);
+  return d.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
