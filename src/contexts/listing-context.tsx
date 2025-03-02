@@ -108,7 +108,40 @@ export const ListingProvider = ({
       );
 
       if (!listingsFromStorage.length) {
-        setListings([]);
+        const sampleListings: ListingType[] = [
+          {
+            id: generateId(),
+            title: "Professional Web Design Services",
+            description:
+              "Custom web design services for small businesses. Includes responsive design, SEO optimization, and content management system.",
+            price: 1500,
+            category: "Services",
+            images: [new File([""], "placeholder.svg")],
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            status: "Active",
+            ownerId: "sample-owner-1",
+          },
+          {
+            id: generateId(),
+            title: "Marketing Consultation Package",
+            description:
+              "Comprehensive marketing consultation for startups and small businesses. Includes market analysis, competitor research, and marketing strategy development.",
+            price: 800,
+            category: "Services",
+            images: [new File([""], "placeholder.svg")],
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            status: "Active",
+            ownerId: "sample-owner-2",
+          },
+        ];
+        setListings(sampleListings);
+        localStorage.setItem(
+          "biztoso_listings",
+          JSON.stringify(sampleListings)
+        );
+        setLoading(false);
         return;
       }
 
